@@ -1,0 +1,10 @@
+,,,,Positive test cases,,,
+execute,class_name,method_name,test_id, test_name, employee_name, employee_age, employee_salary
+TRUE,ExampleTest,employeeCsvPositiveDataDP,1,positive_test,Carl,25,100000
+,,,,,,,
+,,,,Negative test cases,,,
+execute,class_name,method_name,test_id, test_name, employee_name, employee_age, employee_salary
+TRUE,ExampleTest,employeeCsvNegativeDataDP,1,zero_age,Jhon,0,100000
+TRUE,ExampleTest,employeeCsvNegativeDataDP,2,negative_age,Sam,-10,100000
+TRUE,ExampleTest,employeeCsvNegativeDataDP,3,zero_salary,Joe,20,0
+TRUE,ExampleTest,employeeCsvNegativeDataDP,4,negative_salary,Rachel,30,-100
