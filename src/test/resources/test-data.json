@@ -1,0 +1,32 @@
+[
+  {
+    "execute": true,
+    "test_id": 1,
+    "test_name": "positive_test",
+    "employee": {
+      "name": "Carl",
+      "age": 25,
+      "salary": 10000
+    }
+  },
+  {
+    "execute": true,
+    "test_id": 2,
+    "test_name": "negative_test_zero_age",
+    "employee": {
+      "name": "Sam",
+      "age": 0,
+      "salary": 10000
+    }
+  },
+  {
+    "execute": true,
+    "test_id": 3,
+    "test_name": "negative_test_negative_age",
+    "employee": {
+      "name": "Joe",
+      "age": -1,
+      "salary": 10000
+    }
+  }
+]

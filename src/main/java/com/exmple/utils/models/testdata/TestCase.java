@@ -5,12 +5,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TestCase {
 
+    @JsonProperty("execute")
+    private Boolean execute;
     @JsonProperty("test_id")
     private Integer test_id;
     @JsonProperty("test_name")
     private String test_name;
     @JsonProperty("employee")
     private Employee employee;
+
+    @JsonProperty("execute")
+    public Boolean getExecute() {
+        return execute;
+    }
+
+    @JsonProperty("execute")
+    public void setExecute(Boolean execute) {
+        this.execute = execute;
+    }
 
     @JsonProperty("test_id")
     public Integer getTest_id() {

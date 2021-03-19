@@ -9,7 +9,7 @@ public class Employee {
     @JsonProperty("employee_name")
     private String employee_name;
     @JsonProperty("employee_salary")
-    private String employee_salary;
+    private Long employee_salary;
     @JsonProperty("employee_age")
     private Integer employee_age;
     @JsonProperty("profile_image")
@@ -36,12 +36,12 @@ public class Employee {
     }
 
     @JsonProperty("employee_salary")
-    public String getEmployee_salary() {
+    public Long getEmployee_salary() {
         return employee_salary;
     }
 
     @JsonProperty("employee_salary")
-    public void setEmployee_salary(String employee_salary) {
+    public void setEmployee_salary(Long employee_salary) {
         this.employee_salary = employee_salary;
     }
 

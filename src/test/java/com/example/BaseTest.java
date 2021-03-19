@@ -8,7 +8,6 @@ import com.exmple.utils.logs.PrintLogs;
 import com.exmple.utils.resultsToEKS.ELKHelper;
 import com.exmple.utils.resultsToEKS.TestStatus;
 import com.exmple.utils.validators.ObjectValidator;
-import org.json.JSONObject;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -19,10 +18,10 @@ import java.util.HashMap;
 public class BaseTest implements ITestListener {
 
     Properties properties = Properties.getInstance();
-    public PrintLogs printLogs = new PrintLogs(getClass(), "Automation.html");
+    public String jsonTestPlan = System.getProperty("jsonTestPlan", "test-data");
+    public PrintLogs printLogs = new PrintLogs(getClass(), "API-Automation-Report.html");
     public String AWS_KEY = properties.getAWS_KEY();
     public String AWS_SECRET = properties.getAWS_SECRET();
-    public JSONObject testCase;
     public String testId;
     public APIHelper apiHelper = new APIHelper();
     public ExampleHelper exampleHelper = new ExampleHelper();
@@ -34,8 +33,7 @@ public class BaseTest implements ITestListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
         try {
-            testCase = (JSONObject) iTestResult.getParameters()[0];
-            testId = (String) testCase.get("id");
+            testId = (String) iTestResult.getParameters()[0];
         } catch (Exception exp) {
             try {
                 testId = iTestResult.getParameters()[0].toString();
