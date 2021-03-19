@@ -21,7 +21,7 @@ public class ExampleJSONDataProvider {
     PrintLogs printLogs = new PrintLogs(getClass());
     Properties properties = Properties.getInstance();
 
-    public Iterator<Object> getTestCasesFromJSON(String plan) {
+    public List<Object> getTestCasesFromJSON(String plan) {
         List<Object> testDataList = new ArrayList<>();
         try {
             String tempSuite = testSuite.replace("{{{plan}}}", plan);
@@ -43,10 +43,10 @@ public class ExampleJSONDataProvider {
                     testDataList.add(testCase);
                 }
             }
-            return testDataList.iterator();
+            return testDataList;
         } catch (Exception exp){
             printLogs.error("Exception: " + exp.getMessage());
-            return testDataList.iterator();
+            return testDataList;
         }
     }
 }
